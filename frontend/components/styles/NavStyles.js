@@ -34,6 +34,8 @@ const NavStyles = styled.ul`
       bottom: 0;
     }
     &:after {
+      position: relative;
+      top: 55px;
       height: 2px;
       background: red;
       content: '';
@@ -44,15 +46,25 @@ const NavStyles = styled.ul`
       transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
       left: 50%;
       margin-top: 2rem;
+      @media (max-width: 1300px) {
+        top: 10px;
+      }
     }
     &:hover,
     &:focus {
       outline: none;
       &:after {
-        width: calc(100% - 60px);
+        width: 60px;
+      }
+      @media (max-width: 1300px) {
+        &:after {
+          width: 50px;
+        }
       }
     @media (max-width: 700px) {
-        width: calc(100% - 10px);
+        width: 80px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     }
   }
